@@ -37,6 +37,7 @@ namespace Contact_Manager
         static void CommandMenu()
         {
             Console.WriteLine("COMMAND MENU");
+            Console.WriteLine("commands - List available commands");
             Console.WriteLine("list - Dispay all contacts");
             Console.WriteLine("view - View a contact");
             Console.WriteLine("add - Add a contact");
@@ -128,6 +129,11 @@ namespace Contact_Manager
                 Console.WriteLine("No contacts available.\n");
             }
         }
+        static void CommandCommands()
+        {
+            CommandMenu();
+            Console.WriteLine();
+        }
         /// <summary>
         /// Determines which command to run, and runs it. As well as handles exceptions.
         /// </summary>
@@ -140,6 +146,10 @@ namespace Contact_Manager
             { 
                 switch (enteredcommand)
                 {
+                    case "commands":
+                        CommandCommands();
+                        break;
+
                     case "list":
                         CommandList(Contacts);
                         break;
